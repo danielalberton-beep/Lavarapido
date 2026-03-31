@@ -11,6 +11,7 @@ struct Tcarro{
 
 //Funções
 int fun_decre();
+INT TESTE;
 int fun_incre();
 void flush_in ();
 float calcValor (float preco, float qtd);

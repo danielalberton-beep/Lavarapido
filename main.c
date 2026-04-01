@@ -5,19 +5,19 @@
 //Struct para os carros
 struct Tcarro{
   char modelo[30] ;
-  char placa[30] ;
-  char cor[30];
+  char placa[10] ; //diminuir para 10 sem necessidade de 30
+ // char cor[10]; não necessário
 };
 
 //Funções
-int fun_decre();
+int fun fun_decre(); // sem prefixo fun
 INT TESTE;
-int fun_incre();
+int fun fun_incre();// sem prefixo fun
 void flush_in ();
 float calcValor (float preco, float qtd);
-int fun_invalidos (float prEta, float prGas, float prAdit, float tFila);
+int fun_invalidos (float prEta, float prGas, float prAdit, intm tFila);//ajustado int
 int fun_escreva();
-char Fun_Tcar();
+char fun_Tcar();// ajustado letra maiscula
 
 //MAIN
 int main (void) {
@@ -32,7 +32,7 @@ int main (void) {
   printf("---------------------------------------------------------------------------------------------------------\n");
   
   do {
-  fun_invalidos(prEta, prGas, prAdit, tFila);
+  fun_invalidos(prEta, prGas, prAdit, tFila); //nome não condizente ambiguo
     
 	printf ("\nDigite o preço do etanol: ");
 	scanf  ("%f", &prEta);
@@ -52,7 +52,7 @@ int main (void) {
   struct Tcarro carros [tam];
   do {
 
-  menu = fun_escreva ();
+//sem sentido perdido vazio sem paramametro
   
   switch (menu){
     case 1:
@@ -136,7 +136,7 @@ int main (void) {
           break;
         
         case 3:
-          system("clear");system("clear");
+          system("clear");//duplicado
           printf ("%.f carros foram atendidos\n", cAtendido);
           break;
         
@@ -197,13 +197,13 @@ void flush_in(){
     while( (ch = fgetc(stdin)) != EOF && ch != '\n' ){} 
 }
 
-int fun_incre (int *fila){
+int fun_incrementa (int *fila){ //ajustar nome apra decrementa
   *fila = *fila + 1;
   printf ("Número de carros na fila: %d\n", *fila);
  return *fila;
     }
 
-int fun_decre (int *fila){
+int fun_decrementa (int *fila){ //ajustar nome para decrementa
   *fila = *fila - 1;
   printf ("Número de carros na fila: %d\n", *fila);
  return *fila;
